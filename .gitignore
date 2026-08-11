@@ -1,0 +1,23 @@
+# Dependências
+node_modules/
+
+# Cobertura de testes
+coverage/
+
+# Cypress
+tests/e2e/screenshots/
+tests/e2e/videos/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.staging
+.env.production

@@ -59,9 +59,7 @@ jobs:
 
       # 5. Executar Testes Unitários com cobertura
       - name: 🧪 Executar Testes Unitários (Jest)
-        run: npm run test -- --ci --reporters=default --reporters=jest-junit
-        env:
-          JEST_JUNIT_OUTPUT_DIR: ./test-results
+        run: npm test -- --ci
 
       # 6. Upload do relatório de cobertura
       - name: 📊 Upload Coverage Report

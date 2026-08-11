@@ -1,0 +1,232 @@
+/* ============================================
+   [CALC-01] HU01: Interface Visual Windows
+   Paleta: Pink (#ff85a2, #ffc6ff), Purple (#7b2cbf, #240046), White (#ffffff)
+   ============================================ */
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #240046 0%, #3c096c 50%, #7b2cbf 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* [CALC-01] Container principal - Janela Windows */
+.calculator-window {
+    width: 360px;
+    background: #240046;
+    border-radius: 12px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(123, 44, 191, 0.3);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* [CALC-01] Barra de título */
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #240046;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.title-text {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control-btn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.control-btn.close:hover {
+    background: #ff85a2;
+    color: #ffffff;
+}
+
+/* [CALC-01] [CALC-02] Display Container */
+.display-container {
+    padding: 20px 24px;
+    background: #240046;
+    text-align: right;
+}
+
+.display-history {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    min-height: 24px;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* [CALC-01] Display com fonte mínima 2.5rem */
+.display-current {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 56px;
+}
+
+/* [CALC-01] Teclado Grid */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* [CALC-01] Botões base */
+.btn {
+    height: 64px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* [CALC-01] Botões numéricos - Rosa Claro */
+.btn-number {
+    background: #ffc6ff;
+    color: #240046;
+}
+
+.btn-number:hover {
+    background: #ffdbff;
+    transform: scale(1.02);
+}
+
+.btn-number:active {
+    background: #ff85a2;
+    color: #ffffff;
+    transform: scale(0.98);
+}
+
+/* [CALC-01] Botões de operação - Purple Médio */
+.btn-operator {
+    background: #7b2cbf;
+    color: #ffffff;
+}
+
+.btn-operator:hover {
+    background: #9d4edd;
+    transform: scale(1.02);
+}
+
+.btn-operator:active {
+    background: #5a189a;
+    transform: scale(0.98);
+}
+
+/* [CALC-01] Botões de controle */
+.btn-control {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.btn-control:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: scale(1.02);
+}
+
+.btn-control:active {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(0.98);
+}
+
+/* [CALC-01] Botão de igualdade - Rosa Intenso */
+.btn-equals {
+    background: #ff85a2;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.btn-equals:hover {
+    background: #ff6b8a;
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 133, 162, 0.4);
+}
+
+.btn-equals:active {
+    background: #e55a7b;
+    transform: scale(0.98);
+}
+
+/* [CALC-03] Estado de erro no display */
+.display-current.error {
+    color: #ff85a2;
+    font-size: 2.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .calculator-window {
+        width: 100%;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+
+    .btn {
+        height: 56px;
+    }
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.calculator-window {
+    animation: fadeIn 0.5s ease-out;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Windows — Pink, Purple & White Edition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- [CALC-01] HU01: Interface Principal - Janela Windows -->
+    <div class="calculator-window">
+        <!-- Barra de título estilo Windows -->
+        <div class="title-bar">
+            <span class="title-text">🧮 Calculadora</span>
+            <div class="window-controls">
+                <button class="control-btn minimize" aria-label="Minimizar">—</button>
+                <button class="control-btn maximize" aria-label="Maximizar">□</button>
+                <button class="control-btn close" aria-label="Fechar">✕</button>
+            </div>
+        </div>
+
+        <!-- [CALC-02] Display com histórico -->
+        <div class="display-container">
+            <div class="display-history" id="history"></div>
+            <div class="display-current" id="display">0</div>
+        </div>
+
+        <!-- Teclado da calculadora -->
+        <div class="keypad">
+            <!-- Linha 1: Controles -->
+            <button class="btn btn-control" data-action="percent">%</button>
+            <button class="btn btn-control" data-action="clear-entry">CE</button>
+            <button class="btn btn-control" data-action="clear">C</button>
+            <button class="btn btn-control" data-action="backspace">⌫</button>
+
+            <!-- Linha 2 -->
+            <button class="btn btn-control" data-action="inverse">1/x</button>
+            <button class="btn btn-control" data-action="square">x²</button>
+            <button class="btn btn-control" data-action="sqrt">√x</button>
+            <button class="btn btn-operator" data-action="operator" data-value="÷">÷</button>
+
+            <!-- Linha 3 -->
+            <button class="btn btn-number" data-action="number" data-value="7">7</button>
+            <button class="btn btn-number" data-action="number" data-value="8">8</button>
+            <button class="btn btn-number" data-action="number" data-value="9">9</button>
+            <button class="btn btn-operator" data-action="operator" data-value="×">×</button>
+
+            <!-- Linha 4 -->
+            <button class="btn btn-number" data-action="number" data-value="4">4</button>
+            <button class="btn btn-number" data-action="number" data-value="5">5</button>
+            <button class="btn btn-number" data-action="number" data-value="6">6</button>
+            <button class="btn btn-operator" data-action="operator" data-value="-">-</button>
+
+            <!-- Linha 5 -->
+            <button class="btn btn-number" data-action="number" data-value="1">1</button>
+            <button class="btn btn-number" data-action="number" data-value="2">2</button>
+            <button class="btn btn-number" data-action="number" data-value="3">3</button>
+            <button class="btn btn-operator" data-action="operator" data-value="+">+</button>
+
+            <!-- Linha 6 -->
+            <button class="btn btn-number" data-action="toggle-sign">±</button>
+            <button class="btn btn-number" data-action="number" data-value="0">0</button>
+            <button class="btn btn-number" data-action="decimal">,</button>
+            <button class="btn btn-equals" data-action="equals">=</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
